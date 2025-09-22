@@ -1,5 +1,3 @@
-# notes
-
 <h1 align="center">🔳 RISC-V SoC Tapeout Program — Week 1️⃣</h1>
 
 <p align="center">
