@@ -3,9 +3,9 @@
 <h1 align="center">🔳 RISC-V SoC Tapeout Program — Week 1️⃣</h1>
 
 <p align="center">
-<img src="[https://img.shields.io/badge/RISC--V-SoC Tapeout-blue?style=for-the-badge&logo=riscv](https://img.shields.io/badge/RISC--V-SoC%20Tapeout-blue?style=for-the-badge&logo=riscv)" />
-<img src="[https://img.shields.io/badge/Progress-Week 1-success?style=for-the-badge](https://img.shields.io/badge/Progress-Week%201-success?style=for-the-badge)" />
+<img  alt="wwek1" src="https://github.com/user-attachments/assets/cb677106-251e-46a9-81f6-9c2e6d0f99c0" width="600" />
 </p>
+
 
 ---
 
