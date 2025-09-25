@@ -100,7 +100,7 @@ Not all chips are built equal — you choose your **cell diet** 🍔:
 - Process: 1.0 🏭
 - Tree type: balanced 🌳
 
-image1
+![image1](./IMAGES/1.png)
 
 ---
 
@@ -111,7 +111,7 @@ image1
 - **Example Function:** `(A1 & A2) | (B1) | (C1) | (D1)`
 - **Leakage Power:** Defined per logical condition 💧 (e.g., `0.0021893 nW for IA1 & !A2 & !B1 & !C18D1`)
 
-image 2
+![image2](./IMAGES/2.png)
 ---
 
 ### 3️⃣ Power Info ⏱️
@@ -119,7 +119,7 @@ image 2
 - **Max Capacitance:** 0.175 pF 
 - **Max Transition:** 1.499 ns
 - **Power Down Function:** `(IVPWR + VGND)` 
-image3
+![image3](./IMAGES/3.png)
 --- 
 ### 4️⃣ Timing Tables 📊
 
@@ -127,7 +127,7 @@ image3
 - **Fall Transition:** Values for STA 
 - **Purpose:** Enables **Static Timing Analysis (STA)** 
 
-image4
+![image4](./IMAGES/4.png)
 ---
 
 ### 👉 SKY130RTL D2SK1 L2 Lab4 Introduction to  .Lib part2
@@ -142,11 +142,11 @@ In standard cell libraries, **wider cells** are cells with larger transistor siz
 
 🟡  The different types of STD Cells will have different area, power,performance like we can see that via below image 
 
-image 5
+![image5](./IMAGES/5.png)
 
 🟡  Comparing the different kinda STD Cells 
 
-image 6
+![image6](./IMAGES/6.png)
 
 --- 
 ## **🏗️ Hierarchical vs Flat Synthesis – SKY130 RTL Design**
@@ -187,11 +187,11 @@ endmodule
 
 📂 **Files:** `multiple_modules.v`
 
-image 7
+![image7](./IMAGES/7.png)
 
 🔵 Visuaizing the RTL code
 
-image 8
+![image8](./IMAGES/8.png)
 
 ---
 
@@ -208,9 +208,9 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
 🔵 We could able to see the Report of this RTL module
 
-image 9
+![image9](./IMAGES/9.png)
 
-image 10
+![image10](./IMAGES/10.png)
 
 ```
 show multiple_modules.v
@@ -221,7 +221,7 @@ show multiple_modules.v
 - Hierarchical design preserves **module names (U1, U2)**.
 - Gates inside sub-modules (AND, OR) are abstracted in the hierarchy.
 
-image 11
+![image11](./IMAGES/11.png)
 
 🔴 Export Hierarchical Verilog
 
@@ -230,7 +230,7 @@ write_verilog -noattr multiple_modules_hier.v
 nano multiple_modules_hier.v
 ```
 
-image 12
+![image12](./IMAGES/12.png)
 
 🔴 multiple_modules_hier.v 📂
 
@@ -343,7 +343,7 @@ write_verilog multiple_modules_flat.v
 show multiple_modules_flat.v
 ```
 
-image13
+![image13](./IMAGES/13.png)
 
 ---
 
@@ -353,7 +353,7 @@ image13
 nano multiple_modules_flat.v
 ```
 
-image14 → chnages in the hier archial to flatten 
+![image14](./IMAGES/14.png)
 
 ---
 
@@ -397,9 +397,9 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog sub_module1_synth.v
 ```
 
-Image 15
+![Image15](./IMAGES/15.png)
 
-image 16
+![image16](./IMAGES/16.png)
 
 ---
 
@@ -413,9 +413,9 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog sub_module2_synth.v
 ```
 
-image 17 
+![image17](./IMAGES/17.png) 
 
-image 18
+![image18](./IMAGES/18.png)
 
 ---
 
