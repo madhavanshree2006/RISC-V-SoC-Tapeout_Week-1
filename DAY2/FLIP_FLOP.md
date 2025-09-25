@@ -9,7 +9,7 @@ Unlike combinational logic (which changes output immediately with inputs), FFs o
 That’s why they are the **building blocks of memory, registers, and pipelines** in digital systems.
 
 <p align="center">
-  <img src="./IMAGES/16.png" width="700" alt="image 16"/>
+  <img src="./IMAGES/16.png" width="500" alt="image 16"/>
 </p>
 
 <p align="center">
@@ -108,7 +108,7 @@ Flip-Flops often include **Set (S)** and **Reset (R)** functionalities:
 ## 2️⃣ Race Condition ⚠️
 
 <p align="center">
-  <img src="./IMAGES/21.png" width="700" alt="image 21"/>
+  <img src="./IMAGES/21.png" width="500" alt="image 21"/>
 </p>
 
 A **race condition** occurs when signals change at nearly the same time, creating **uncertainty** in the flip-flop output.
@@ -122,7 +122,7 @@ For example: if `D` and `Reset` change very close to the clock edge, the final s
 ## 3️⃣ Asynchronous Set Example 🔼
 
 <p align="center">
-  <img src="./IMAGES/22.png" width="700" alt="image 22"/>
+  <img src="./IMAGES/22.png" width="500" alt="image 22"/>
 </p>
 
 ```verilog
