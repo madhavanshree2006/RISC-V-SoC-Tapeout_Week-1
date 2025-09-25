@@ -399,8 +399,6 @@ write_verilog sub_module1_synth.v
 
 ![Image15](./IMAGES/15.png)
 
-![image16](./IMAGES/16.png)
-
 ---
 
 🔴 Open yosys and follow the commands for sub_module2
@@ -412,10 +410,6 @@ synth -top sub_module2
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog sub_module2_synth.v
 ```
-
-![image17](./IMAGES/17.png) 
-
-![image18](./IMAGES/18.png)
 
 ---
 
