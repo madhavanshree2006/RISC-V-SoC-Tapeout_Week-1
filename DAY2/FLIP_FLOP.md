@@ -8,8 +8,8 @@ Unlike combinational logic (which changes output immediately with inputs), FFs o
 
 That’s why they are the **building blocks of memory, registers, and pipelines** in digital systems.
 
-![image 16](a)
-image 17
+![image 16](./IMAGES/16.png)
+![image 17](./IMAGES/17.png)
 
 ---
 
@@ -32,7 +32,7 @@ There are different kinds of FFs, each with its own behavior:
     
     In short: without FFs, digital circuits would be unstable and unreliable.
     
-    iamge 18
+![iamge 18](./IMAGES/18.png)
     
 
 ---
@@ -69,7 +69,7 @@ Think of a flip-flop like a **gatekeeper**:
 - But the output (`Q`) won’t change until the clock allows it.
 - This makes FFs act as a **shield** that blocks glitches from propagating further.
 
-image 19
+![image19](./IMAGES/19.png)
 
 ---
 
@@ -89,13 +89,13 @@ Flip-Flops often include **Set (S)** and **Reset (R)** functionalities:
 - **Synchronous Set/Reset** ⏱️ – Triggered only on the clock edge.
 - **Asynchronous Set/Reset** ⚡ – Works immediately, independent of the clock.
 
-image 20 
+![image20](./IMAGES/20.png) 
 
 ---
 
 ## 2️⃣ Race Condition ⚠️
 
-image 21
+![image21](./IMAGES/21.png)
 
 A **race condition** occurs when signals change at nearly the same time, creating **uncertainty** in the flip-flop output.
 
@@ -107,7 +107,7 @@ For example: if `D` and `Reset` change very close to the clock edge, the final s
 
 ## 3️⃣ Asynchronous Set Example 🔼
 
-image 22
+![image22](./IMAGES/22.png)
 
 ```verilog
 module dff_async_set ( input clk , input async_set , input d , output reg q );
@@ -131,7 +131,7 @@ endmodule
 
 ## 4️⃣ Asynchronous Reset Example 🔽
 
-image 23
+![image23](./IMAGES/23.png)
 
 ```verilog
 module dff_asyncres ( input clk , input async_reset , input d , output reg q );
@@ -155,7 +155,7 @@ endmodule
 
 ## 5️⃣ Combining Synchronous & Asynchronous Reset 🔄
 
-image 24
+![image24](./IMAGES/24.png)
 
 ```verilog
 module dff_asyncres_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
@@ -249,7 +249,7 @@ endmodule
 
 ### 👾 OUTPUT WAVE FORM &  ELABORATED IMAGE
 
-image 25 
+![image25](./IMAGES/25.png) 
 
 ```verilog
 yosys
@@ -260,7 +260,7 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-image 26 
+![image26](./IMAGES/26.png) 
 
 ### 📝 Netlist
 
@@ -335,7 +335,7 @@ endmodule
 
 ### 👾 OUTPUT WAVE FORM &  ELABORATED IMAGE
 
-image 27
+![image27](./IMAGES/27.png)
 
 ```verilog
 yosys
@@ -346,7 +346,7 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-image 28
+![image28](./IMAGES/28.png)
 
 ### 📝 Netlist
 
@@ -423,7 +423,7 @@ endmodule
 
 ### 👾 OUTPUT WAVE FORM &  ELABORATED IMAGE
 
-image 29
+![image29](./IMAGES/28.png)
 
 ```verilog
 yosys
@@ -434,7 +434,7 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-imaeg 30
+![imaeg30](./IMAGES/30.png)
 
 ### 📝 Netlist
 
@@ -453,7 +453,7 @@ nano dff_asyncres_syncres_netlist.v
 
 ### **📌 mult_2.v**
 
-image 31
+![image31](./IMAGES/31.png)
 
 ```verilog
 module mul2 (input [2:0] a, output [3:0] y);
@@ -514,7 +514,7 @@ show
 - `abc` → Optimizes using technology library.
 - `show` → Visualizes the synthesized circuit.
 
-image 32
+![image32](./IMAGES/32.png)
 
 ✅ After synthesis, Yosys will **replace multiplication with shift logic**, showing how it optimizes hardware.
 
