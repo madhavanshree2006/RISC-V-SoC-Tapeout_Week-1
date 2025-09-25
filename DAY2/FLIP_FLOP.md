@@ -9,7 +9,7 @@ Unlike combinational logic (which changes output immediately with inputs), FFs o
 That’s why they are the **building blocks of memory, registers, and pipelines** in digital systems.
 
 ![image 16](./IMAGES/16.png)
-![image 17](./IMAGES/17.png)
+![image 17](./IMAGES/17.jpg)
 
 ---
 
