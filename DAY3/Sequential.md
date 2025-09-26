@@ -1,4 +1,6 @@
-# 👉 SKY130RTL D3SK3 L1 – Lab07 Sequential Logic Optimisations (Part 1) ⚡
+# 🌟 Welcome to Sequential part 🌟
+
+## 👉 SKY130RTL D3SK3 L1 – Lab07 Sequential Logic Optimisations (Part 1) ⚡
 
 ## 1️⃣ Introduction
 
@@ -14,7 +16,7 @@
 
 - **Code Behavior**:
 
-image16
+![image16](./ASSETS/16.png)
 
 ```verilog
 module dff_const1(input clk, input reset, output reg q);
@@ -37,7 +39,7 @@ endmodule
 
 ### 📉 Waveform Observation
 
-imaeg17
+![imaeg17](./ASSETS/17.png)
 
 - Reset is asserted → `Q = 0`.
 - Reset de-asserted → `Q` doesn’t change immediately.
@@ -50,7 +52,7 @@ imaeg17
 
 - **Code Behavior**:
 
-image18
+![image18](./ASSETS/18.png)
 
 ```verilog
 module dff_const2(input clk, input reset, output reg q);
@@ -71,7 +73,7 @@ endmodule
 
 ### 📉 Waveform Observation
 
-image19
+![image19](./ASSETS/19.png)
 
 - No matter reset or clock, `Q = 1`.
 - 🔑 **Conclusion**: This is a **sequential constant (always 1)**.
@@ -108,7 +110,7 @@ yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> show
 ```
 
-image20
+![image20](./ASSETS/20.png)
 
 🎯Steps for **`dff_const2.v`**:
 
@@ -121,7 +123,7 @@ yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> show
 ```
 
-image21
+![image21](./ASSETS/21.png)
 
 ---
 
@@ -156,9 +158,9 @@ image21
 - Confirms whether **optimizations** were applied.
 - Helps compare **different designs** and track resource usage.
 
-image 22
+![image 22](./ASSETS/22.png)
 - in which there is a number of cell present and no memory 
-image 23
+![image 23](./ASSETS/23.png)
 - as well as for dff_const2.v there is no memory but itt also doesn’t had the cells !
 
 ---
@@ -167,7 +169,7 @@ image 23
 
 This example is more interesting 🚀 
 
-image24
+![image24](./ASSETS/24.png)
 
 - The design has **two flops** → `Q1` and `Q`.
 - Both share the **same clock and reset**.
@@ -208,7 +210,7 @@ endmodule
 
 - Lets see the timing output of this circuit.
 
-image 25
+![image25](./ASSETS/25.png)
 
 - **Reset active** → `Q1 = 0`, `Q = 1`.
 - **At 1st clock edge**:
@@ -256,7 +258,7 @@ image 25
 
 ### 🖥️ Simulation Results
 
-image 26
+![image26](./ASSETS/26.png)
 
 - **Reset applied** → Q1 = 0, Q = 1.
 - On **first clock edge after reset**:
@@ -285,7 +287,7 @@ yosys> show
 
 ### 📊 Synthesis Outcome
 
-image27
+![image27](./ASSETS/27.png)
 
 - **Two flip-flops inferred** → matches expectation.
 - **Mapped standard cells**:
@@ -311,7 +313,7 @@ image27
 
 ### 🖥️ Simulation Results
 
-image 28
+![image28](./ASSETS/28.png)
 
 ## 📊 Synthesis of `dff_const4.v`
 
@@ -326,7 +328,7 @@ yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> show
 ```
 
-image29
+![image29](./ASSETS/29.png)
 
 ---
 
@@ -343,7 +345,7 @@ image29
 
 ### 🖥️ Simulation Results
 
-image30
+![image30](./ASSETS/30.png)
 
 ## 📊 Synthesis of `dff_const5.v`
 
@@ -358,7 +360,7 @@ yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> show
 ```
 
-image31
+![image31](./ASSETS/31.png)
 
 ---
 
@@ -382,7 +384,7 @@ Behavior:
 - Else → `count = count + 1` (3-bit up-counter)
 - Output → `Q = count[0]`
 
-image32
+![image32](./ASSETS/32.png)
 
 So:
 
@@ -448,7 +450,7 @@ show
 - Expected → **3 DFFs** (for 3-bit counter).
 - Actual → **Only 1 DFF inferred!** 🤯
 
-image33
+![image33](./ASSETS/33.png)
 
 Reason:
 
@@ -461,7 +463,7 @@ Reason:
 
 Final synthesized logic:
 
-image34
+![image34](./ASSETS/34.png)
 
 - One flip-flop with **active-low reset** (library specific).
 - Inverter inserted (since RTL had active-high reset).
@@ -523,7 +525,7 @@ show
 
 ### 📊 Observation
 
-image35
+![image35](./ASSETS/35.png)
 
 - In the previous case → only **1 flop** was inferred.
 - Now → **all 3 flops are retained** (count[2], count[1], count[0]).
@@ -580,3 +582,6 @@ Q = count[0]’ · count[1]’ · count[2]
 - If outputs are **used in final expression**, all required flops + logic are **preserved**.
 
 ---
+
+
+# Thank you 🤗
