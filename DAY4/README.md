@@ -45,7 +45,10 @@ Gate-Level Simulation flow:
 Netlist (Post-Synth) + Testbench + Gate-Level Models → iVerilog → VCD → GTKWave
 ```
 
-image1
+<p align="center">
+  <img src="./ASSETS/1.png" width="700" alt="image 1"/>
+</p>
+
 
 ✨ Extra step: **Gate-Level Verilog Models** must be provided → so iVerilog knows what cells like `AND2`, `DFF_X1`, etc., actually mean.
 
@@ -64,7 +67,9 @@ image1
 
 ## 🔹 Example Transformation
 
-image2
+<p align="center">
+  <img src="./ASSETS/2.png" width="700" alt="image 2"/>
+</p>
 
 👉 RTL Code:
 
@@ -137,7 +142,9 @@ end
 - The block is **only sensitive to `sel`**.
 - Changes in `i0` or `i1` are **ignored** unless `sel` toggles.
 
-image3
+<p align="center">
+  <img src="./ASSETS/3.png" width="700" alt="image 3"/>
+</p>
 
 ### 📉 Simulation Behavior
 
@@ -236,7 +243,9 @@ Both are evaluated in parallel → order of writing doesn’t affect results.
 - On reset → both flops = 0.
 - Input: `D` → goes to `Q0` → shifts to `Q`.
 
-image4
+<p align="center">
+  <img src="./ASSETS/4.png" width="700" alt="image 4"/>
+</p>
 
 ---
 
@@ -420,7 +429,9 @@ gtkwave tb_ternary_operator_mux.vcd
 
 - Observations:
 
-image 5
+<p align="center">
+  <img src="./ASSETS/5.png" width="700" alt="image 5"/>
+</p>
 
 - Signals: `i0`, `i1`, `select`, `y`.
 - Behavior matches expected **2x1 MUX** functionality.
@@ -443,7 +454,9 @@ show
 
 - Observation:
 
-image6 
+<p align="center">
+  <img src="./ASSETS/6.png" width="700" alt="image 6"/>
+</p>
 
 - Netlist created (`ternary_operator_mux_net.v`)
 - 2x1 MUX realized using **NAND + Inverter gates**
@@ -473,7 +486,9 @@ gtkwave tb_ternary_operator_mux.vcd
 
 ### 🔹 Observations:
 
-image7
+<p align="center">
+  <img src="./ASSETS/7.png" width="700" alt="image 7"/>
+</p>
 
 - Signals now show standard cell instances: `_6_`, `_7_`, `_8_` …
 - `i0`, `i1`, `select`, `y` still behave as expected.
@@ -524,7 +539,9 @@ gtkwave tb_bad_mux.vcd
 
 ### 🔎 Observations:
 
-image8
+<p align="center">
+  <img src="./ASSETS/8.png" width="700" alt="image 8"/>
+</p>
 
 - Waveform shows **flop-like behavior**:
     - When `sel = 0`, `i0` changes are **ignored** until `sel` toggles.
@@ -548,7 +565,9 @@ write_verilog -noattr bad_mux_net.v
 show
 ```
 
-image9
+<p align="center">
+  <img src="./ASSETS/9.png" width="700" alt="image 9"/>
+</p>
 
 - Netlist (`bad_mux_net.v`) shows:
     - Logic inferred correctly as a **MUX**.
@@ -568,7 +587,9 @@ gtkwave tb_bad_mux.vcd
 
 ### 🔎 Observations:
 
-image10
+<p align="center">
+  <img src="./ASSETS/10.png" width="700" alt="image 10"/>
+</p>
 
 - GLS shows **true MUX behavior**:
     - When `sel = 0`, output `y` follows `i0`.
@@ -579,8 +600,9 @@ image10
 
 ## 🆚 Comparing RTL vs GLS
 
-image11
-
+<p align="center">
+  <img src="./ASSETS/11.png" width="700" alt="image 11"/>
+</p>
 | Case | RTL (Bad Sensitivity List) | GLS (Synthesis Output) |
 | --- | --- | --- |
 | `sel = 0` | `i0` changes **ignored** unless `sel` toggles | `y` follows `i0` correctly |
@@ -597,7 +619,9 @@ image11
 
 We want to implement the logic:
 
-image12
+<p align="center">
+  <img src="./ASSETS/12.png" width="700" alt="image 12"/>
+</p>
 
 D=(A∨B)∧CD = (A \lor B) \land C
 
@@ -642,7 +666,10 @@ gtkwave tb_blocking_caveat.vcd
 
 ### 🔎 Observations (RTL Waves)
 
-image13
+<p align="center">
+  <img src="./ASSETS/13.png" width="700" alt="image 13"/>
+</p>
+
 
 - Signals: `A, B, C, D`
 - **Mismatch examples:**
@@ -672,7 +699,9 @@ write_verilog -noattr blocking_caveat_net.v
 show
 ```
 
-image14
+<p align="center">
+  <img src="./ASSETS/14.png" width="700" alt="image 14"/>
+</p>
 
 ### 🔎 Netlist View
 
@@ -702,7 +731,10 @@ gtkwave tb_blocking_caveat.vcd
 
 ### 🔎 Observations (GLS Waves)
 
-image15
+<p align="center">
+  <img src="./ASSETS/15.png" width="700" alt="image 15"/>
+</p>
+
 
 - Output `D` matches the intended logic:
     - `D = (A | B) & C` always ✅
@@ -712,7 +744,9 @@ image15
 
 ## 🆚 Comparison
 
-image16
+<p align="center">
+  <img src="./ASSETS/16.png" width="700" alt="image 16"/>
+</p>
 
 | Condition | Expected | RTL Simulation (Blocking Issue) | GLS (Correct Hardware) |
 | --- | --- | --- | --- |
