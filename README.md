@@ -13,9 +13,11 @@
 
 🌟 This is **Week 1** of the **VSD RISC-V SoC Tapeout Program** —
 
-I explored **Verilog RTL design**, learned about **logic synthesis using Yosys**,
+I explored **Verilog RTL design**, learned about **simulation (Icarus + GTKWave)**,
 
-and understood the importance of **cell libraries, timing (setup/hold), and faster vs slower cells** in digital design.
+understood **logic synthesis using Yosys**,
+
+and studied the importance of **cell libraries, timing (.lib), and faster vs slower cells** in digital design.
 
 </div>
 
@@ -23,15 +25,19 @@ and understood the importance of **cell libraries, timing (setup/hold), and fast
 
 ## 🎯 Week 1 Objectives
 
-✔️ Learn the basics of **Verilog RTL design** 📝
+✔️ Introduction to **Verilog RTL design** 📝
 
-✔️ Introduction to **Yosys & Logic synthesis** ⚙️
+✔️ Hands-on with **Icarus Verilog & GTKWave** for simulation/debugging 📐📊
+
+✔️ Explore **Yosys** for RTL → Gate-level synthesis ⚙️
 
 ✔️ Understand **cell libraries (.lib) and their role in timing closure** ⏱️
 
-✔️ Explore the difference between **faster vs slower cells** 🔄
+✔️ Learn about **Hierarchical vs Flat synthesis** 🏗️
 
-✔️ Capture key learnings with practical notes 📚
+✔️ Compare **Flop coding styles & optimizations** 🔄
+
+✔️ Capture **combinational & sequential optimizations** 🧩
 
 ---
 
@@ -40,26 +46,39 @@ and understood the importance of **cell libraries, timing (setup/hold), and fast
 | 📝 Task | 📌 Description | 🎯 Status |
 | --- | --- | --- |
 | 1 | Studied **Verilog RTL design fundamentals** | ✅ Done |
-| 2 | Explored **Yosys** for logic synthesis | ✅ Done |
-| 3 | Understood **why slow cells are needed (HOLD fixing)** | ✅ Done |
-| 4 | Compared **Faster vs Slower Cells (Delay, Power, Area trade-offs)** | ✅ Done |
-| 5 | Learned how all this ties into the **.lib file** for synthesis | ✅ Done |
+| 2 | Wrote and ran testbenches using **Icarus Verilog** | ✅ Done |
+| 3 | Debugged waveforms using **GTKWave** | ✅ Done |
+| 4 | Explored **Yosys** for logic synthesis | ✅ Done |
+| 5 | Understood **cell libraries (.lib)** and timing concepts | ✅ Done |
+| 6 | Analyzed **Hierarchical vs Flat synthesis** | ✅ Done |
+| 7 | Learned different **Flop coding styles and optimizations** | ✅ Done |
+| 8 | Explored **Combinational & Sequential Logic Optimizations** | ✅ Done |
 
 ---
 
 ## 📒 Key Learnings
 
-## Day 1️⃣
+### 📌 Day 1 — Verilog RTL Design & Simulation
 
-- **RTL Design** → Describes circuits at register & logic level (synthesizable Verilog).
-- **Yosys** → Converts RTL → Gate-level netlist using `.lib`.
-- **Slow Cells** → Prevent hold violations (ensure stable capture).
-- **Fast vs Slow Cells**:
-    - Fast → Low delay, high area & power.
-    - Slow → High delay, low area & power.
-- **Balance** → Synthesizer guided by constraints for optimum PPA (Power, Performance, Area).
+- **RTL Design** → Circuits at register & logic level (synthesizable Verilog).
+- **Icarus Verilog** → For compiling + simulating designs.
+- **GTKWave** → To visualize & debug waveform outputs.
 
----
+### 📌 Day 2 — Logic Synthesis & Timing Libraries
+
+- **Yosys** → Converts RTL → Gate-level netlist.
+- **.lib Files** → Contain timing, power, and area info of standard cells.
+- **Hierarchical vs Flat Synthesis**:
+    - Hierarchical → preserves design hierarchy.
+    - Flat → merges logic for aggressive optimization.
+
+### 📌 Day 3 — Optimizations in Synthesis
+
+- **Slow Cells** → Prevent hold violations (ensure stability).
+- **Fast Cells** → Reduce setup delay, but increase power & area.
+- **Optimization Balance** → Synthesizer chooses cells for optimum PPA (Power, Performance, Area).
+- **Combinational Optimization** → Removes redundant gates.
+- **Sequential Optimization** → Removes unused flops/outputs.
 
 ## 🛠️ Tools in Use
 
