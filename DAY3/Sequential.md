@@ -1,4 +1,5 @@
-# 🌟 Welcome to Sequential part 🌟
+<h1 align="center">🌟 Welcome to Sequential part 🌟</h1>
+
 
 ## 👉 SKY130RTL D3SK3 L1 – Lab07 Sequential Logic Optimisations (Part 1) ⚡
 
