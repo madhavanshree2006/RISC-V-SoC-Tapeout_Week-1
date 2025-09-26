@@ -687,4 +687,4 @@ endmodule
 
 ---
 
-# 👉 Vist the [DAY3] 🤩
+# 👉 Vist the [DAY3](https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout_Week-1/tree/main/DAY3) 🤩
