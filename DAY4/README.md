@@ -754,3 +754,7 @@ gtkwave tb_blocking_caveat.vcd
 | A=1, C=1 | D=1 | D=0 ❌ | D=1 ✅ |
 
 ---
+
+# 👉 Vist the [DAY4](https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout_Week-1/tree/main/DAY5) 🤩
+
+# Thank you 🤗
