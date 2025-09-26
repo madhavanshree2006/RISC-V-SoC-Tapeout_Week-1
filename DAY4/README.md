@@ -755,6 +755,6 @@ gtkwave tb_blocking_caveat.vcd
 
 ---
 
-# 👉 Vist the [DAY4](https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout_Week-1/tree/main/DAY5) 🤩
+# 👉 Vist the [DAY5](https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout_Week-1/tree/main/DAY5) 🤩
 
 # Thank you 🤗
