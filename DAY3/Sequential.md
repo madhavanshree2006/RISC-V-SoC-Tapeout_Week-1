@@ -17,7 +17,9 @@
 
 - **Code Behavior**:
 
-![image16](./ASSETS/16.png)
+<p align="center">
+  <img src="./ASSETS/16.png" width="700" alt="image 16"/>
+</p>
 
 ```verilog
 module dff_const1(input clk, input reset, output reg q);
@@ -40,7 +42,9 @@ endmodule
 
 ### 📉 Waveform Observation
 
-![imaeg17](./ASSETS/17.png)
+<p align="center">
+  <img src="./ASSETS/17.png" width="700" alt="image 17"/>
+</p>
 
 - Reset is asserted → `Q = 0`.
 - Reset de-asserted → `Q` doesn’t change immediately.
@@ -53,7 +57,10 @@ endmodule
 
 - **Code Behavior**:
 
-![image18](./ASSETS/18.png)
+<p align="center">
+  <img src="./ASSETS/18.png" width="700" alt="image 18"/>
+</p>
+
 
 ```verilog
 module dff_const2(input clk, input reset, output reg q);
@@ -74,7 +81,9 @@ endmodule
 
 ### 📉 Waveform Observation
 
-![image19](./ASSETS/19.png)
+<p align="center">
+  <img src="./ASSETS/19.png" width="700" alt="image 19"/>
+</p>
 
 - No matter reset or clock, `Q = 1`.
 - 🔑 **Conclusion**: This is a **sequential constant (always 1)**.
@@ -111,7 +120,9 @@ yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> show
 ```
 
-![image20](./ASSETS/20.png)
+<p align="center">
+  <img src="./ASSETS/20.png" width="700" alt="image 20"/>
+</p>
 
 🎯Steps for **`dff_const2.v`**:
 
@@ -124,7 +135,9 @@ yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> show
 ```
 
-![image21](./ASSETS/21.png)
+<p align="center">
+  <img src="./ASSETS/21.png" width="700" alt="image 21"/>
+</p>
 
 ---
 
@@ -159,9 +172,14 @@ yosys> show
 - Confirms whether **optimizations** were applied.
 - Helps compare **different designs** and track resource usage.
 
-![image 22](./ASSETS/22.png)
+<p align="center">
+  <img src="./ASSETS/22.png" width="700" alt="image 22"/>
+</p>
 - in which there is a number of cell present and no memory 
-![image 23](./ASSETS/23.png)
+
+<p align="center">
+  <img src="./ASSETS/23.png" width="700" alt="image 23"/>
+</p>
 - as well as for dff_const2.v there is no memory but itt also doesn’t had the cells !
 
 ---
@@ -170,7 +188,9 @@ yosys> show
 
 This example is more interesting 🚀 
 
-![image24](./ASSETS/24.png)
+<p align="center">
+  <img src="./ASSETS/24.png" width="700" alt="image 24"/>
+</p>
 
 - The design has **two flops** → `Q1` and `Q`.
 - Both share the **same clock and reset**.
@@ -211,7 +231,9 @@ endmodule
 
 - Lets see the timing output of this circuit.
 
-![image25](./ASSETS/25.png)
+<p align="center">
+  <img src="./ASSETS/25.png" width="700" alt="image 25"/>
+</p>
 
 - **Reset active** → `Q1 = 0`, `Q = 1`.
 - **At 1st clock edge**:
@@ -259,7 +281,9 @@ endmodule
 
 ### 🖥️ Simulation Results
 
-![image26](./ASSETS/26.png)
+<p align="center">
+  <img src="./ASSETS/26.png" width="700" alt="image 26"/>
+</p>
 
 - **Reset applied** → Q1 = 0, Q = 1.
 - On **first clock edge after reset**:
@@ -288,8 +312,9 @@ yosys> show
 
 ### 📊 Synthesis Outcome
 
-![image27](./ASSETS/27.png)
-
+<p align="center">
+  <img src="./ASSETS/27.png" width="700" alt="image 27"/>
+</p>
 - **Two flip-flops inferred** → matches expectation.
 - **Mapped standard cells**:
     - First flop → **reset flop**.
@@ -314,7 +339,9 @@ yosys> show
 
 ### 🖥️ Simulation Results
 
-![image28](./ASSETS/28.png)
+<p align="center">
+  <img src="./ASSETS/28.png" width="700" alt="image 28"/>
+</p>
 
 ## 📊 Synthesis of `dff_const4.v`
 
@@ -329,7 +356,9 @@ yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> show
 ```
 
-![image29](./ASSETS/29.png)
+<p align="center">
+  <img src="./ASSETS/29.png" width="700" alt="image 29"/>
+</p>
 
 ---
 
@@ -346,7 +375,9 @@ yosys> show
 
 ### 🖥️ Simulation Results
 
-![image30](./ASSETS/30.png)
+<p align="center">
+  <img src="./ASSETS/30.png" width="700" alt="image 30"/>
+</p>
 
 ## 📊 Synthesis of `dff_const5.v`
 
@@ -361,7 +392,9 @@ yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> show
 ```
 
-![image31](./ASSETS/31.png)
+<p align="center">
+  <img src="./ASSETS/31.png" width="700" alt="image 31"/>
+</p>
 
 ---
 
@@ -385,8 +418,9 @@ Behavior:
 - Else → `count = count + 1` (3-bit up-counter)
 - Output → `Q = count[0]`
 
-![image32](./ASSETS/32.png)
-
+<p align="center">
+  <img src="./ASSETS/32.png" width="700" alt="image 32"/>
+</p>
 So:
 
 - `count[2]` and `count[1]` are **unused** ❌
@@ -451,8 +485,9 @@ show
 - Expected → **3 DFFs** (for 3-bit counter).
 - Actual → **Only 1 DFF inferred!** 🤯
 
-![image33](./ASSETS/33.png)
-
+<p align="center">
+  <img src="./ASSETS/33.png" width="700" alt="image 33"/>
+</p>
 Reason:
 
 - Only `count[0]` influences primary output Q.
@@ -464,7 +499,9 @@ Reason:
 
 Final synthesized logic:
 
-![image34](./ASSETS/34.png)
+<p align="center">
+  <img src="./ASSETS/34.png" width="700" alt="image 34"/>
+</p>
 
 - One flip-flop with **active-low reset** (library specific).
 - Inverter inserted (since RTL had active-high reset).
@@ -526,7 +563,9 @@ show
 
 ### 📊 Observation
 
-![image35](./ASSETS/35.png)
+<p align="center">
+  <img src="./ASSETS/35.png" width="700" alt="image 34"/>
+</p>
 
 - In the previous case → only **1 flop** was inferred.
 - Now → **all 3 flops are retained** (count[2], count[1], count[0]).
