@@ -622,6 +622,6 @@ Q = count[0]’ · count[1]’ · count[2]
 - If outputs are **used in final expression**, all required flops + logic are **preserved**.
 
 ---
-
+# 👉 Vist the [DAY4](https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout_Week-1/tree/main/DAY3) 🤩
 
 # Thank you 🤗
