@@ -1,3 +1,8 @@
+<h1 align="center">🌟 RISC-V SoC Tapeout – Week 1️⃣</h1>
+<br><br>
+
+<h2 align="center">🚀 Day 3 -  Combinational and sequential optmizations</h2>
+<br>
 
 
 
@@ -487,3 +492,18 @@ yosys> show
 image15
 
 ---
+🚦 Hold on Cadet Engineer!
+
+Looks like your scrolling finger might need a coffee break ☕.
+Day 3’s Sequential Logic Optimisations turned out so heavy that cramming everything into this README.md would feel like trying to fit an elephant 🐘 into a matchbox.
+
+So here’s the deal:
+
+👉 The first half of Sequential Logic Optimisations stays right here in the README.
+👉 The second half (with cooler tricks & juicy details 🍉) has moved into a separate file:
+
+## **🔗 Click here to continue the adventure → [Sequential.md]()**
+
+Don’t worry, the story doesn’t end here.
+Think of README.md as Season 1 and Sequential.md as the Season 2 you don’t want to miss! 🎬✨
+
