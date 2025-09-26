@@ -502,7 +502,7 @@ So here’s the deal:
 👉 The first half of Sequential Logic Optimisations stays right here in the README.
 👉 The second half (with cooler tricks & juicy details 🍉) has moved into a separate file:
 
-## **🔗 Click here to continue the adventure → [Sequential.md]()**
+## **🔗 Click here to continue the adventure → [Sequential.md](https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout_Week-1/blob/main/DAY3/Sequential.md)**
 
 Don’t worry, the story doesn’t end here.
 Think of README.md as Season 1 and Sequential.md as the Season 2 you don’t want to miss! 🎬✨
