@@ -38,7 +38,7 @@ The goal is to **squeeze logic** to get the most optimized design. Benefits:
 
 Consider an AND-OR-INVERT (AOI) function:
 
-![image1]
+![image1](./ASSETS/1.png)
 
 ```
 Y = (A · B + C)̅
@@ -55,7 +55,7 @@ Y = (A · B + C)̅
 - AOI implementation → **6 MOSFETs**
 - Inverter → **2 MOSFETs**
 
-**![image 2]**
+![image 2](./ASSETS/2.png)
 
 ✅ **Result:** less area, less power (transistor count ↓).
 
@@ -65,7 +65,7 @@ Y = (A · B + C)̅
 
 Original (MUX-like):
 
-![image3]
+![image3](./ASSETS/3.png)
 
 ```
 Y = A ? (B ? A : 0) : C̅
@@ -122,7 +122,7 @@ Works like combinational constant propagation but applied to sequential elements
 - `D = 0` (tied low)
 - `reset` connected
 
-![image4]
+![image4](./ASSETS/4.png)
 
 **Observation:**
 
@@ -142,7 +142,7 @@ Works like combinational constant propagation but applied to sequential elements
 
 Consider a **set-FF** with `D = 0`.
 
-![image5]
+![image5](./ASSETS/5.png)
 
 - `set = 1` → `Q = 1` **immediately** (asynchronous)
 - `set = 0` → `Q` returns to `0` only at **next clock edge** (synchronous)
@@ -175,7 +175,7 @@ This lecture covers **advanced sequential optimizations**: **state optimization*
 
 - **Concept:** Eliminate/merge unused or redundant states to create a **condensed state machine**.
 - **Impact:** Fewer states → simpler sequential logic → lower area/power/complexity.
-
+![image6](./ASSETS/6.png)
 ---
 
 ## 2️⃣ Logic Cloning (Physical-Aware Synthesis)
@@ -187,7 +187,7 @@ This lecture covers **advanced sequential optimizations**: **state optimization*
 - Flop A at corner1, Flop B at corner2, Flop C at corner3. Long interconnect delays A→B and A→C.
 
 **✅Solution — Clone logic A:**
-
+![image7](./ASSETS/7.png)
 - Duplicate logic (`A1`, `A2`) and place copies near B and C.
 - If `A` had **large positive slack**, cloning is safe (timing still met).
 
@@ -205,7 +205,7 @@ This lecture covers **advanced sequential optimizations**: **state optimization*
 **⏱️ Concept:** Move flip-flops across combinational logic to **balance combinational delays** and increase max clock frequency.
 
 **Example:**
-
+![image8](./ASSETS/8.png)
 - Section1 delay = **5 ns**
 - Section2 delay = **2 ns**
 - Max clock limited by longer path → **200 MHz** (5 ns)
@@ -311,7 +311,7 @@ yosys> show
 ```
 
 - `opt_clean -purge` → removes unused cells & performs constant propagation.
-image9
+![image9](./ASSETS/9.png)
 - `abc -liberty` → technology mapping with standard cell library.
 
 ### File: `opt_check2.v`
@@ -331,11 +331,11 @@ yosys> show
 
 - For **`opt_check.v`** → Yosys produces a **2-input AND gate** ✅
 
-image 10
+![image10](./ASSETS/10.png)
 
 - For **`opt_check2.v`** → Yosys produces logic equivalent to an **OR gate**, but often implemented via **NAND/NOR** style depending on library constraints.
 
-image 11
+![image11](./ASSETS/11.png)
 
 📌 Example: Since OR gates require stacked PMOS transistors (less efficient), tools may realize it using **NAND + INV** style for better performance.
 
@@ -364,7 +364,7 @@ module opt_check3 (input a , input b, input c , output y);
 endmodule
 ```
 
-![image12]
+![image12](./ASSETS/12.png)
 
 - In `opt_check3`, `y` depends on `a` and `c`:
     - If `a = 0 → y = 0`
@@ -395,7 +395,7 @@ yosys> show
 
 👉 Expected output = **3-input AND gate** 🎯
 
-image13
+![image13](./ASSETS/13.png)
 
 ---
 
@@ -437,7 +437,7 @@ yosys> show
 
 👉 Expected output = **3-input AND gate** 🎯
 
-image14
+![image14](./ASSETS/14.png)
 
 ---
 
@@ -489,7 +489,7 @@ yosys> show
 
 👉 Expected output = (a·b) + c → AND + OR gate structure ✅
 
-image15
+![image15](./ASSETS/15.png)
 
 ---
 🚦 Hold on Cadet Engineer!
