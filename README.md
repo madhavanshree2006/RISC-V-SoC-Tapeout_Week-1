@@ -17,7 +17,9 @@ I explored **Verilog RTL design**, learned about **simulation (Icarus + GTKWave)
 
 understood **logic synthesis using Yosys**,
 
-and studied the importance of **cell libraries, timing (.lib), and faster vs slower cells** in digital design.
+and studied the importance of **cell libraries, timing (.lib), faster vs slower cells**,
+
+and advanced synthesis topics like **optimizations, GLS, and coding constructs (if/case, for/generate)**.
 
 </div>
 
@@ -39,6 +41,12 @@ and studied the importance of **cell libraries, timing (.lib), and faster vs slo
 
 ✔️ Capture **combinational & sequential optimizations** 🧩
 
+✔️ Perform **GLS (Gate-Level Simulation)** 🔍
+
+✔️ Debug **Synthesis-Simulation mismatches** ⚖️
+
+✔️ Explore advanced constructs → **If/Case, For loop, For-Generate** 🧑‍💻
+
 ---
 
 ## ✅ Tasks Completed
@@ -53,6 +61,9 @@ and studied the importance of **cell libraries, timing (.lib), and faster vs slo
 | 6 | Analyzed **Hierarchical vs Flat synthesis** | ✅ Done |
 | 7 | Learned different **Flop coding styles and optimizations** | ✅ Done |
 | 8 | Explored **Combinational & Sequential Logic Optimizations** | ✅ Done |
+| 9 | Understood **GLS concepts & mismatches (blocking vs non-blocking)** | ✅ Done |
+| 10 | Practiced **If/Case constructs & incomplete conditions** | ✅ Done |
+| 11 | Built **Ripple-Carry Adder using For/For-Generate loops** | ✅ Done |
 
 ---
 
@@ -76,16 +87,39 @@ and studied the importance of **cell libraries, timing (.lib), and faster vs slo
 
 - **Slow Cells** → Prevent hold violations (ensure stability).
 - **Fast Cells** → Reduce setup delay, but increase power & area.
-- **Optimization Balance** → Synthesizer chooses cells for optimum PPA (Power, Performance, Area).
+- **Optimization Balance** → Synthesizer chooses cells for optimum PPA.
 - **Combinational Optimization** → Removes redundant gates.
 - **Sequential Optimization** → Removes unused flops/outputs.
 
-## 🛠️ Tools in Use
+### 📌 Day 4 — GLS & Synthesis-Simulation Mismatch
 
-- **Yosys** → For RTL to gate-level logic synthesis ⚙️
-- **Icarus Verilog** → For RTL simulation 📐
-- **GTKWave** → For debugging waveforms 📊
+- **GLS (Gate-Level Simulation)** → Ensures netlist correctness vs RTL.
+- **Synthesis-Simulation Mismatch** → Can arise from coding styles.
+- **Blocking vs Non-blocking** → Critical in sequential logic.
+- Labs → Debugging mismatches with testbenches.
+
+### 📌 Day 5 — Advanced Coding Constructs & Optimizations
+
+- **If/Case Constructs** → Handling complete, incomplete, overlapping cases.
+- **Labs** → Show how missing cases → latch inference or mismatch.
+- **For Loop** → Used in *always* block (evaluations).
+- **For-Generate** → Replicates hardware (outside always).
+- Built **Ripple Carry Adder (RCA)** elegantly using **for-generate**.
 
 ---
 
+## 🛠️ Tools in Use
+
+- **Yosys** → RTL → Gate-level synthesis ⚙️
+- **Icarus Verilog** → RTL simulation 📐
+- **GTKWave** → Waveform debugging 📊
+- **Sky130 PDK .lib** → Timing libraries for synthesis ⏱️
+
+---
+
+> 💡 "Week 1 has been a deep dive into RTL, synthesis, and optimizations.
+I’ve learned a lot — from Verilog basics to elegant hardware generation.
+Now, I’m eagerly waiting for the upcoming weeks to push this journey further 🚀."
+>
+--- 
 👉 Main Repo Link : [[https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout-Program](https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout-Program)]
