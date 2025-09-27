@@ -280,7 +280,10 @@ To build this RCA, we use **Full Adders** connected in series.
 
 ```
 
-image26
+
+<p align="center">
+  <img src="./ASSETS/26.png" width="700" alt="image 26"/>
+</p>
 
 Outputs:
 
@@ -420,8 +423,9 @@ gtkwave tb_mux_generate.vcd
 
 🎨 For clarity in GTKWave:
 
-image27
-
+<p align="center">
+  <img src="./ASSETS/27.png" width="700" alt="image 27"/>
+</p>
 - `I0 → Green`, `I1 → Orange`, `I2 → Yellow`, `I3 → Red`
 - Output `Y` follows the color of the selected input.
 
@@ -463,7 +467,10 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-image 28
+
+<p align="center">
+  <img src="./ASSETS/28.png" width="700" alt="image 28"/>
+</p>
 
 - Simulate and compare waveform of synthesized netlist.
 - Verify that expression for `Y` matches the expected **MUX functionality**.
@@ -593,11 +600,15 @@ gtkwave tb_demux_generate.vcd
 
 ### Case-Based
 
-image 29
+<p align="center">
+  <img src="./ASSETS/29.png" width="700" alt="image 29"/>
+</p>
 
 ### For-Loop
 
-image30
+<p align="center">
+  <img src="./ASSETS/30.png" width="700" alt="image 30"/>
+</p>
 
 - Input `I` shown in **different color**.
 - At each `select` value → only the corresponding output follows `I`.
@@ -616,7 +627,9 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-image31
+<p align="center">
+  <img src="./ASSETS/31.png" width="700" alt="image 31"/>
+</p>
 
 ### For-Loop
 
@@ -628,7 +641,9 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-image32
+<p align="center">
+  <img src="./ASSETS/32.png" width="700" alt="image 32"/>
+</p>
 
 ---
 
@@ -647,7 +662,9 @@ image32
 
 ## 🧮 Ripple Carry Addition Flow
 
-image33
+<p align="center">
+  <img src="./ASSETS/33.png" width="700" alt="image 33"/>
+</p>
 
 1. Start with two **n-bit numbers**: A and B.
 2. Each bit-pair is added using a **full adder**.
@@ -791,7 +808,9 @@ iverilog fa.v rca.v tb_rca.v
 
 ## 📊 Example Results
 
-image34
+<p align="center">
+  <img src="./ASSETS/34.png" width="700" alt="image 34"/>
+</p>
 
 - 🟢 Inputs and outputs match perfectly in decimal.
 - **Test cases observed:**
@@ -812,6 +831,8 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-image 35
+<p align="center">
+  <img src="./ASSETS/35.png" width="700" alt="image 34"/>
+</p>
 
 ---
