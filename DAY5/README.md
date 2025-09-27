@@ -24,7 +24,9 @@ end
 
 Structure of the if-statement 
 
-image1
+<p align="center">
+  <img src="./ASSETS/1.png" width="700" alt="image 1"/>
+</p>
 
 - **Priority Behavior:**
     - `condition1` → **highest priority**
@@ -57,9 +59,14 @@ else if (condition2)
 // No else!
 ```
 
-image2
+<p align="center">
+  <img src="./ASSETS/2.png" width="700" alt="image 2"/>
+</p>
 
-image3
+
+<p align="center">
+  <img src="./ASSETS/3.png" width="700" alt="image 3"/>
+</p>
 
 ### 🔹 What Happens in Hardware:
 
@@ -96,7 +103,11 @@ always @(posedge clock or posedge reset) begin
 end
 ```
 
-image4
+
+<p align="center">
+  <img src="./ASSETS/4.png" width="700" alt="image 4"/>
+</p>
+
 
 - **Behavior:**
     - Counter **increments only if `enable` is high**
@@ -130,7 +141,9 @@ always @(*) begin
 end
 ```
 
-image5
+<p align="center">
+  <img src="./ASSETS/5.png" width="700" alt="image 5"/>
+</p>
 
 - **Analogous to:** `switch-case` in C/C++ ✅
 - **Hardware Mapping:**
@@ -152,7 +165,9 @@ image5
 
 - Always include `default` to **avoid inferred latches**
 
-image6
+<p align="center">
+  <img src="./ASSETS/6.png" width="700" alt="image 6"/>
+</p>
 
 - **Example:**
 
@@ -229,7 +244,9 @@ end
     - When `select = 2'b01`, `Y` is **not assigned** → inferred latch created
     - Default does **not cover this partial assignment** → latch inferred for missing outputs
 
-image7
+<p align="center">
+  <img src="./ASSETS/7.png" width="700" alt="image 7"/>
+</p>
 
 - **Rule:** ✅
     - **Always assign all outputs in every segment** of the `case`
@@ -320,7 +337,9 @@ endmodule
     - When `i0` is high → `y = i1`
     - When `i0` is low → `y` **latches previous value**
 
-image 8
+<p align="center">
+  <img src="./ASSETS/8.png" width="700" alt="image 8"/>
+</p>
 
 - **Behavior Summary:**
     
@@ -343,7 +362,9 @@ image 8
     gtkwave  tb_incomp_if.vcd
     ```
     
-    image9
+ <p align="center">
+  <img src="./ASSETS/9.png" width="700" alt="image 9"/>
+</p>
     
     - Observations in GTKWave:
         - When `i0` = 1 → `y` follows `i1`
@@ -363,8 +384,9 @@ synth -top incomp_if
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
-
-image10
+<p align="center">
+  <img src="./ASSETS/10.png" width="700" alt="image 10"/>
+</p>
 
 - **Observation:**
     - Tool infers **D latch**
@@ -406,7 +428,10 @@ image10
     - When `i0` = 0 → `y` **latches previous value** 🔒
 - This effectively models a **D latch** with `i0` as the enable signal
 
-image11
+<p align="center">
+  <img src="./ASSETS/11.png" width="700" alt="image 11"/>
+</p>
+
 
 ---
 
@@ -420,7 +445,9 @@ gtkwave  tb_incomp_if2.vcd
 
 - **Waveform Analysis:**
 
-image12
+image12<p align="center">
+  <img src="./ASSETS/12.png" width="700" alt="image 12"/>
+</p>
 
 - When `i0` = 1 → `y` follows `i1`
 - When `i0` = 0 → `y` holds previous value (either 1 or 0) 🔒
@@ -441,7 +468,9 @@ image12
     ```
     
 
-image13
+<p align="center">
+  <img src="./ASSETS/13.png" width="700" alt="image 13"/>
+</p>
 
 - **Logic Observed:**
     - **Latch inferred** 🔒
@@ -477,7 +506,9 @@ endmodule
 
 - **Interpretation:**
 
-image 14
+<p align="center">
+  <img src="./ASSETS/14.png" width="700" alt="image 14"/>
+</p>
 
 - `select = 00` → `y` follows `i0` ✅
 - `select = 01` → `y` follows `i1` ✅
@@ -496,7 +527,10 @@ gtkwave  tb_incomp_case.vcd
 
 - **Waveform Observations:**
 
-image15
+
+<p align="center">
+  <img src="./ASSETS/15.png" width="700" alt="image 15"/>
+</p>
 
 | Select (`{i1,i0}`) | Output `y` Behavior | Notes |
 | --- | --- | --- |
@@ -519,7 +553,10 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-image16
+
+<p align="center">
+  <img src="./ASSETS/16.png" width="700" alt="image 16"/>
+</p>
 
 - **Logic Observed:**
     - **Latch inferred** 🔒 driving output `y`
@@ -547,8 +584,9 @@ When `default` is added:
 
 💡 Since all `select` values are covered (0,1,2,3), **no latch is inferred**.
 
-image17
-
+<p align="center">
+  <img src="./ASSETS/17.png" width="700" alt="image 17"/>
+</p>
 ---
 
 ### 2️⃣ Simulation Flow 🖥️
@@ -561,7 +599,10 @@ gtkwave tb_comp_case.vcd
 
 ✅ **Simulation Result:**
 
-image18
+<p align="center">
+  <img src="./ASSETS/18.png" width="700" alt="image 18"/>
+</p>
+
 
 - `sel = 00` → follows `i0`
 - `sel = 01` → follows `i1`
@@ -584,7 +625,10 @@ show
 
 ✅ Output:
 
-iamge19
+
+<p align="center">
+  <img src="./ASSETS/19.png" width="700" alt="image 19"/>
+</p>
 
 - Only **AND, OR, NOT, MUX cells**
 - ❌ **No latch inferred**
@@ -653,11 +697,15 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-image20
+<p align="center">
+  <img src="./ASSETS/20.png" width="700" alt="image 20"/>
+</p>
 
 ### 🔍 Observation:
 
-image21
+<p align="center">
+  <img src="./ASSETS/21.png" width="700" alt="image 21"/>
+</p>
 
 - ✅ **`y` has NO latch** → fully defined
 - 🔒 **`x` has a latch** due to missing assignments
@@ -711,7 +759,9 @@ iverilog bad_case.v tb_bad_case.v
 gtkwave tb_bad_case.vcd
 ```
 
-image22
+<p align="center">
+  <img src="./ASSETS/22.png" width="700" alt="image 22"/>
+</p>
 
 ### 😵 What Happened?
 
@@ -754,7 +804,10 @@ synth -top bad_case
 
 ✅ Observation:
 
-image23
+
+<p align="center">
+  <img src="./ASSETS/23.png" width="700" alt="image 23"/>
+</p>
 
 - No missing case items → **No inferred latches**
 - BUT overlapping case branches still create **functional ambiguity**
@@ -777,8 +830,9 @@ write_verilog -noattr bad_case_net.v
 show
 ```
 
-image24
-
+<p align="center">
+  <img src="./ASSETS/24.png" width="700" alt="image 24"/>
+</p>
 🔍 Everything still appears normal — but overlap is a hidden hazard.
 
 ---
@@ -796,7 +850,9 @@ tb_bad_case.v -o a.out
 gtkwave tb_bad_case.vcd
 ```
 
-image25
+<p align="center">
+  <img src="./ASSETS/25.png" width="700" alt="image 25"/>
+</p>
 
 ### ✅ GLS Behavior (Correct Output)
 
