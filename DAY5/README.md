@@ -1,7 +1,7 @@
 <h1 align="center">🌟 RISC-V SoC Tapeout – Week 1️⃣</h1>
 <br><br>
 
-<h2 align="center">🚀 Day 4 - Optimization in synthesis</h2>
+<h2 align="center">🚀 Day 5 - Optimization in synthesis</h2>
 <br>
 
 
