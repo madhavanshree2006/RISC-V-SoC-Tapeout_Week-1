@@ -1,5 +1,5 @@
+<h1 align="center">🌟 Welcome to Loops part 🌟</h1>
 
-# 🌟 SKY130RTL D5SK4 L1 — For Loop vs For Generate (Part 1)
 
 ## ✅ 1️⃣ Introduction to Looping in Verilog
 
