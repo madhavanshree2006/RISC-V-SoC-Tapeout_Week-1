@@ -208,7 +208,7 @@ gvim tb_good_mux.v -o good_mux.v
 ### SKY130RTL D1SK3 L1 Introduction to yosys
 
 <p align="center">
-<img src="./ASSETS/35.png" width="700" alt="image 18"/>
+<img src="./ASSETS/35.png" width="250" alt="image 18"/>
 </p>
 
 🔵 **YOSYS** -> is a open source synthesizer tool used widely
