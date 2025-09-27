@@ -854,3 +854,13 @@ You can STILL end up with:
 ✔ Always verify behavior in both RTL and GLS
 
 ---
+🚦 Hold on Cadet Engineer!
+
+Looks like your scrolling finger might need a coffee break ☕. Day 3’s Sequential Logic Optimisations turned out so heavy that cramming everything into this README.md would feel like trying to fit an elephant 🐘 into a matchbox.
+
+So here’s the deal:
+
+👉 The first half of Sequential Logic Optimisations stays right here in the README. 👉 The second half (with cooler tricks & juicy details 🍉) has moved into a separate file:
+
+🔗 Click here to continue the adventure → Loops.md
+Don’t worry, the story doesn’t end here. Think of README.md as Season 1 and Sequential.md as the Season 2 you don’t want to miss! 🎬✨
